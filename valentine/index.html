@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Royal Valentine ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Playfair+Display:wght@700;900&family=Pinyon+Script&family=Montserrat:wght@700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #FFD700;
+            --maroon: #800000;
+            --cream: #fffcf2;
+            --deep-red: #A52A2A;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: var(--cream);
+            background-image:
+                radial-gradient(circle at center, transparent 0%, rgba(112, 21, 21, 0.15) 100%),
+                url("https://www.transparenttextures.com/patterns/vintage-speckles.png"),
+                url("https://www.transparenttextures.com/patterns/damask-weave.png");
+            background-attachment: fixed;
+            color: var(--maroon);
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .screen-border {
+            position: fixed;
+            inset: 15px;
+            border: 5px double var(--gold);
+            pointer-events: none;
+            z-index: 55;
+        }
+
+        .vignette {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 60;
+            background: radial-gradient(circle, transparent 20%, rgba(0, 0, 0, 0.3) 100%);
+        }
+
+        h1,
+        h2 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-weight: 900;
+            color: var(--maroon);
+            text-shadow: 3px 3px 0px var(--gold);
+            letter-spacing: 2px;
+        }
+
+        .bold-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            color: var(--maroon);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .script-font {
+            font-family: 'Pinyon Script', cursive;
+            color: var(--deep-red);
+            font-weight: bold;
+            font-size: 4.5rem !important;
+        }
+
+        .royal-frame {
+            position: relative;
+            padding: 10px;
+            border: 4px solid var(--gold);
+            background: white;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+            z-index: 10;
+        }
+
+        .royal-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #royal-seal-screen {
+            position: fixed;
+            inset: 0;
+            background: var(--maroon);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wax-seal {
+            width: 150px;
+            height: 150px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+            cursor: pointer;
+            border: 10px double var(--maroon);
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+        }
+
+        #main-story {
+            opacity: 0;
+            visibility: hidden;
+            transition: 1.5s;
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+        }
+
+        section {
+            height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: 1s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        #magic-layer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        .petal {
+            position: absolute;
+            animation: fall 8s linear infinite;
+            font-size: 25px;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="screen-border"></div>
+    <div class="vignette"></div>
+    <div id="magic-layer"></div>
+
+    <div id="royal-seal-screen">
+        <div class="text-center" onclick="openStory()">
+            <div class="wax-seal">🥀</div>
+            <p class="mt-8 tracking-[0.6em] text-[12px] text-white font-bold uppercase">Click to Unlock My Heart</p>
+        </div>
+    </div>
+
+    <div id="main-story">
+
+        <section>
+            <div class="reveal active text-center">
+                <p class="script-font mb-2">My Dearest...</p>
+                <h1 class="text-6xl md:text-8xl mb-4 uppercase">MY MUMMAAAAA</h1>
+                <div class="bg-gold h-2 w-48 mx-auto"></div>
+                <p class="bold-text text-xl mt-8">VALENTINE 2026</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="reveal max-w-5xl grid md:grid-cols-2 gap-12 items-center">
+                <div class="royal-frame h-[450px]">
+                    <img src="asset/WhatsApp%20Image%202026-02-14%20at%2017.43.59.jpeg">
+                </div>
+                <div>
+                    <h2 class="text-5xl mb-6">Best photos </h2>
+                    <p class="text-2xl italic font-bold text-gray-900 leading-relaxed border-l-8 border-gold pl-6">
+                       Ini fotoo yang palingg akuu sukaaa selamaa iniii
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="reveal w-full max-w-6xl px-6">
+                <h2 class="text-center text-4xl mb-12">BEST MEMORIES</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="royal-frame h-72"><img src="asset/WhatsApp%20Image%202026-02-14%20at%2018.01.40.jpeg">
+                    </div>
+                    <div class="royal-frame h-72 md:translate-y-12"><img
+                            src="asset/WhatsApp%20Image%202026-02-14%20at%2017.12.49%20(2).jpeg"></div>
+                    <div class="royal-frame h-72"><img src="asset/WhatsApp%20Image%202026-02-14%20at%2017.12.50.jpeg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="reveal w-full max-w-5xl grid grid-cols-2 gap-8 px-6">
+                <div class="royal-frame h-80"><img src="asset/WhatsApp%20Image%202026-02-14%20at%2017.12.49.jpeg"></div>
+                <div class="royal-frame h-80"><img src="asset/WhatsApp%20Image%202026-02-14%20at%2017.43.59.jpeg"></div>
+                <div class="col-span-2 text-center mt-6">
+                    <h2 class="text-4xl">2 hari ini gaakan aku lupain sampai kapanpun</h2>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="reveal max-w-4xl w-full px-6">
+                <div class="royal-frame bg-white/95 p-12 border-[6px] border-double border-gold">
+                    <h2 class="text-center text-4xl mb-8">MY HEART'S DECLARATION</h2>
+                    <div class="font-sans text-xl leading-loose text-justify text-gray-900 font-bold italic space-y-6">
+                        <p>
+                    Gak kerasa kita udah hampir 2 tahun bareng. Jujur, dari awal kita mutusin buat pacaran, aku emang udah percaya kalau
+                    hubungan kita bisa selamanya. Berbagai keadaan yang udah kita lewati bareng itu jadi bukti kalau kepercayaan aku gak
+                    salah.
+                    
+                    Di hari Valentine ini, aku berharap kita terus kayak gini. Aku yakin, rintangan apa pun nanti bakal bisa kita lewatin
+                    sampai tujuan kita tercapai. Makasih ya udah ada selama ini—kamu bener-bener bikin hidup aku jadi jauh lebih berwarna. I
+                    love you
+                        <p>
+                           
+
+                        <p class="text-center text-4xl script-font pt-6">You are my everything.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="reveal max-w-4xl grid md:grid-cols-2 gap-10 items-center">
+                <div class="order-2 md:order-1 text-right">
+                    <h2 class="text-4xl mb-4 uppercase">Endless Love</h2>
+                    <p class="bold-text text-lg">My favorite thing</p>
+                </div>
+                <div class="royal-frame h-[400px] order-1 md:order-2">
+                    <img src="asset/WhatsApp%20Image%202026-02-14%20at%2017.16.33%20(1).jpeg">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="reveal text-center">
+                <h2 class="text-7xl md:text-9xl mb-6 uppercase">Forever & Always</h2>
+                <div class="bg-gold h-2.5 w-64 mx-auto mb-10"></div>
+                <p class="bold-text text-4xl tracking-[0.5em]">I LOVE YOU, Chikaaaa</p>
+                <p class="script-font mt-10">Your Forever Prince, Arifyann</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function openStory() {
+            const seal = document.getElementById('royal-seal-screen');
+            const story = document.getElementById('main-story');
+            seal.style.transform = 'translateY(-100%)';
+            setTimeout(() => {
+                seal.style.display = 'none';
+                story.style.visibility = 'visible';
+                story.style.opacity = '1';
+                document.body.style.overflow = 'auto';
+            }, 1000);
+        }
+
+        function createMagic() {
+            const container = document.getElementById('magic-layer');
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            petal.innerHTML = Math.random() > 0.5 ? '🥀' : '❤️';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = Math.random() * 3 + 5 + 's';
+            container.appendChild(petal);
+            setTimeout(() => petal.remove(), 8000);
+        }
+        setInterval(createMagic, 300);
+
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    </script>
+</body>
+
+</html>
